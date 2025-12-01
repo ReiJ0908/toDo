@@ -1,7 +1,7 @@
 package com.example.todo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -9,14 +9,15 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-
+import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -38,6 +39,35 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setAdapter(adapter);
 
         ImageButton add_Task = findViewById(R.id.add_task);
+
+        // 🔽 Add BottomNavigationView setup
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
+        bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+
+                switch (item.getItemId()) {
+
+                    case R.id.nav_tasks:
+                        Toast.makeText(MainActivity.this, "Tasks", Toast.LENGTH_SHORT).show();
+                        return true;
+
+                    case R.id.nav_calendar:
+                        Toast.makeText(MainActivity.this, "Calendar", Toast.LENGTH_SHORT).show();
+                        return true;
+
+                    case R.id.nav_notifications:
+                        Toast.makeText(MainActivity.this, "Notifications", Toast.LENGTH_SHORT).show();
+                        return true;
+
+                    case R.id.nav_settings:
+                        Toast.makeText(MainActivity.this, "Settings", Toast.LENGTH_SHORT).show();
+                        return true;
+                }
+                return false;
+            }
+        });
+        // 🔼 End BottomNavigationView setup
 
         add_Task.setOnClickListener(new View.OnClickListener()
         {
@@ -87,4 +117,5 @@ public class MainActivity extends AppCompatActivity
             }
         });
     }
+
 }

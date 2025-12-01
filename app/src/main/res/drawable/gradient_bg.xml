@@ -5,9 +5,9 @@
     <gradient
         android:type="linear"
         android:angle="90"
-        android:startColor="#A4E7D4"
+        android:startColor="#BDBDBD"
         android:centerColor="#F0F6FB"
-        android:endColor="#FFD2BA" />
+        android:endColor="#D0D0D4" />
 
     <!-- optional corner radius if you want rounded root (usually not for full-screen) -->
     <!-- <corners android:radius="0dp"/> -->
