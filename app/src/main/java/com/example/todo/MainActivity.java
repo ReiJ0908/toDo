@@ -8,6 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.app.AlarmManager;
+import android.content.Intent;
+import android.os.Build;
+import android.provider.Settings;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        requestExactAlarmPermission();
         // 🔽 Add BottomNavigationView setup
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
 
@@ -77,10 +82,22 @@ public class MainActivity extends AppCompatActivity
         });
         // 🔼 End BottomNavigationView setup
     }
+
     private void loadFragment(Fragment fragment) {
     getSupportFragmentManager()
             .beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit();
-}
+    }
+    private void requestExactAlarmPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+            if (!alarmManager.canScheduleExactAlarms()) {
+                Intent intent = new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM);
+                startActivity(intent);
+            }
+        }
+    }
+
 }
