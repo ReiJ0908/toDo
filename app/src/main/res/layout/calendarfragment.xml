@@ -10,7 +10,7 @@
         android:id="@+id/add_task_layout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/Borders"
+        android:background="@color/colorPrimaryLight"
         android:gravity="center_vertical|end"
         android:orientation="horizontal"
         android:padding="5dp"

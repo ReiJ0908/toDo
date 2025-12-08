@@ -5,13 +5,41 @@
     android:layout_height="match_parent"
     tools:ignore="SpeakableTextPresentCheck">
 
-
+    <!-- Single child for ScrollView -->
     <LinearLayout
-        android:id="@+id/task_list_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"/>
+        android:orientation="vertical">
 
+        <!-- Your added header layout -->
+        <LinearLayout
+            android:id="@+id/add_task_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:gravity="center_vertical|end"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Notifications"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="#47494C"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Your original task list container -->
+        <LinearLayout
+            android:id="@+id/task_list_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp" />
+
+    </LinearLayout>
 
 </ScrollView>

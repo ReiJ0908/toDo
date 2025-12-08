@@ -104,9 +104,13 @@ public class task_adapter extends RecyclerView.Adapter<task_adapter.TaskViewHold
                     editButton.setVisibility(View.GONE);
                     saveButton.setVisibility(View.VISIBLE);
 
+                    // 🔥 Hide due date while editing
+                    dueDateView.setVisibility(View.GONE);
+
                     editText.requestFocus();
                 }
             });
+
 
             // Save Edited Task
             saveButton.setOnClickListener(v -> {
@@ -117,9 +121,8 @@ public class task_adapter extends RecyclerView.Adapter<task_adapter.TaskViewHold
 
                     if (!newTitle.isEmpty()) {
 
-                        // Update Task object
                         Task task = list.get(position);
-                        task.setTitle(newTitle); // UPDATE TITLE
+                        task.setTitle(newTitle);
 
                         textView.setText(newTitle);
 
@@ -127,6 +130,9 @@ public class task_adapter extends RecyclerView.Adapter<task_adapter.TaskViewHold
                         editText.setVisibility(View.GONE);
                         editButton.setVisibility(View.VISIBLE);
                         saveButton.setVisibility(View.GONE);
+
+                        // 🔥 Show due date again after saving
+                        dueDateView.setVisibility(View.VISIBLE);
 
                         notifyItemChanged(position);
 
@@ -136,6 +142,7 @@ public class task_adapter extends RecyclerView.Adapter<task_adapter.TaskViewHold
                     }
                 }
             });
+
         }
     }
 }

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
     android:background="@drawable/all_corner_round"
-    android:backgroundTint="@color/white"
+    android:backgroundTint="@color/colorBorder"
     android:padding="10dp">
 
     <!-- Task Title -->
@@ -17,6 +17,7 @@
         android:layout_toStartOf="@+id/edit_task_button"
         android:paddingEnd="10dp"
         android:text="Task Text"
+        android:textColor="@color/colorTextPrimary"
         android:textSize="18sp" />
 
     <!-- Due Date -->
@@ -26,10 +27,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/view_task"
         android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:paddingTop="4dp"
         android:text="Due: (none)"
+        android:textColor="@color/colorTextSecondary"
         android:textSize="14sp"
-        android:textColor="#555555"
-        android:paddingTop="4dp"/>
+        android:textStyle="italic" />
 
     <!-- Edit Text Field -->
     <EditText
@@ -48,6 +52,7 @@
         android:id="@+id/edit_task_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_marginEnd="5dp"
         android:layout_toStartOf="@+id/done"
         android:minWidth="0dp"

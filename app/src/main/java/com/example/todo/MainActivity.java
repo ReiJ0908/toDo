@@ -2,23 +2,16 @@ package com.example.todo;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
+
 import android.widget.Toast;
 import android.app.AlarmManager;
 import android.content.Intent;
 import android.os.Build;
 import android.provider.Settings;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -54,23 +47,23 @@ public class MainActivity extends AppCompatActivity
                 switch (item.getItemId()) {
 
                     case R.id.nav_tasks:
-                        Toast.makeText(MainActivity.this, "Tasks", Toast.LENGTH_SHORT).show();
+
                         loadFragment(new TasksFragment());
                         return true;
 
                     case R.id.nav_calendar:
-                        Toast.makeText(MainActivity.this, "Calendar", Toast.LENGTH_SHORT).show();
+
                         loadFragment(new CalendarFragment());
                         return true;
 
                     case R.id.nav_notifications:
-                        Toast.makeText(MainActivity.this, "Notifications", Toast.LENGTH_SHORT).show();
+
                         loadFragment(new NotificationsFragment());
                         return true;
 
-                    case R.id.nav_settings:
-                        Toast.makeText(MainActivity.this, "Settings", Toast.LENGTH_SHORT).show();
-                        loadFragment(new SettingsFragment());
+                    case R.id.nav_progress:
+
+                        loadFragment(new ProgressTrackerFragment());
                         return true;
                 }
                 return false;

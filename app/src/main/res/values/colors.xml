@@ -19,4 +19,27 @@
     <color name="buttons">#C9A37C</color>
     <color name="pressed">#B07F5E</color>
 
+    <!-- Primary Colors -->
+    <color name="colorPrimary">#4A90E2</color>
+    <color name="colorPrimaryDark">#357ABD</color>
+    <color name="colorPrimaryLight">#D9ECFF</color>
+
+    <!-- Secondary Colors -->
+    <color name="colorSecondary">#50E3C2</color>
+    <color name="colorSecondaryDark">#36B89A</color>
+    <color name="colorSecondaryLight">#D8FFF5</color>
+
+    <!-- Neutral / Background -->
+    <color name="colorBackground">#F8F8F8</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorBorder">#E0E0E0</color>
+
+    <!-- Text Colors -->
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextSecondary">#757575</color>
+    <color name="colorTextDisabled">#BDBDBD</color>
+
+    <!-- Error -->
+    <color name="colorError">#FF5252</color>
+
 </resources>
